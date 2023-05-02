@@ -58,6 +58,7 @@ class Ui_DISPLAY_WINDOW(object):
             for result in results:
                 self.data_table.setItem(table_row, 0, QtWidgets.QTableWidgetItem(result[1]))
                 table_row += 1
+            self.data_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         except Exception as exception:
             database_home.ui.message_label.setText(str(exception).upper())
 
