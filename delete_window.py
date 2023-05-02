@@ -68,7 +68,7 @@ class Ui_DELETE_WINDOW(object):
             query = f'''DELETE FROM EMPLOYEE WHERE ID = {deleted_ID};'''
             self.cursor.execute(query)
             database_home.data.conn.commit()
-            self.delete_message.setText("Record Deleted Successfully!")
+            self.delete_message.setText(f"Record Deleted Successfully from {database_home.data.table_name}!")
         except Exception as exception:
             self.delete_message.setText(str(exception).upper())
 

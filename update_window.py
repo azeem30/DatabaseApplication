@@ -92,7 +92,7 @@ class Ui_UPDATE_WINDOW(object):
             query = f'''UPDATE EMPLOYEE SET NAME = '{updated_name}' WHERE ID = {updated_ID};'''
             self.cursor.execute(query)
             database_home.data.conn.commit()
-            self.update_message.setText("Record Updated Successfully!")
+            self.update_message.setText(f"Record Updated Successfully in {database_home.data.table_name}!")
         except Exception as exception:
             self.update_message.setText(str(exception).upper())
 

@@ -93,7 +93,7 @@ class Ui_INSERT_WINDOW(object):
             query = f'''INSERT INTO EMPLOYEE(ID, NAME) VALUES({int_ID}, '{entered_name}');'''
             self.cursor.execute(query)
             database_home.data.conn.commit()
-            self.insert_message.setText("Record inserted successfully!")
+            self.insert_message.setText(f"Record inserted successfully in {database_home.data.table_name}!")
         except Exception as exception:
             self.insert_message.setText(str(exception).upper())
 
